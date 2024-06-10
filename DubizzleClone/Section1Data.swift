@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Section1Data {
+    var image: String
+    var label: String
+}

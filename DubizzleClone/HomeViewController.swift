@@ -17,11 +17,8 @@ class HomeViewController: UIViewController {
         homeTable.dataSource = self
         homeTable.delegate = self
     }
-
 }
-
 // have 3 sections
-
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -33,12 +30,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
-            return 340
+            return 363
         } else if indexPath.section == 1 {
             return 170
         } else {
             return 180
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        header.backgroundColor = .clear
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -56,26 +63,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Section3TableViewCell", for: indexPath) as! Section3TableViewCell
             return cell
         }
-        
     }
-    
-    
 }
-
-//extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 9
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Collection1ViewCell", for: indexPath) as! Collection1ViewCell
-//        
-////        cell.collection1Label.text = "Hi"
-////        cell.collection1Image.image = UIImage(systemName: "paperplane")
-//        
-//        return cell
-//    }
-//    
-//    
-//}
-

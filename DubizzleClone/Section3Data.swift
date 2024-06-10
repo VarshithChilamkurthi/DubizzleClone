@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Section3Data {
+    var image: String
+    var price: String
+    var baths: String
+    var address: String
+}
